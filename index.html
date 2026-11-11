@@ -270,8 +270,8 @@ blockquote cite{display:block;font-style:normal;font-size:14px;color:#C9BFB8;mar
 .creds div:last-child{border-bottom:2px solid var(--ink)}
 .creds .num{font-size:34px;color:var(--violet)}
 .creds p{color:var(--gray)}
-.contact{margin-top:88px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end}
-.thanks h2{font-size:clamp(48px,8vw,104px);color:var(--violet);font-weight:800}
+.contact{margin-top:88px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:end}
+.thanks h2{font-size:clamp(44px,5.6vw,80px);color:var(--violet);font-weight:800}
 .tagline{font-family:var(--display);font-weight:300;font-size:clamp(22px,2.6vw,32px);line-height:1.3;margin-top:22px}
 .tagline b{font-weight:700}
 .tagline i{font-style:normal;color:var(--violet)}
@@ -473,10 +473,10 @@ dialog.lb button{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));ri
         <h2 style="font-size:clamp(28px,3.6vw,44px)">Armá tu presencia en Búnker</h2>
         <p class="soft" style="margin-top:12px">Elegí los formatos que te interesan. Con los cuatro juntos accedés al pack de main sponsor.</p>
         <div class="opts" id="bkOpts">
-          <label class="opt"><input type="checkbox" value="35000" id="bk-spot"><div><h3>Spot en tanda</h3><p>Anuncio de hasta 45 segundos en 2 cortes del programa.</p></div><span class="price">$35.000</span></label>
-          <label class="opt"><input type="checkbox" value="120000" id="bk-est"><div><h3>Estandarte en set</h3><p>Estandarte publicitario a la vista de cámara. Tamaño a definir.</p></div><span class="price">$120.000</span></label>
-          <label class="opt"><input type="checkbox" value="125000" id="bk-men"><div><h3>Menciones en vivo</h3><p>3 anuncios de producto de más de 30 segundos, leídos al aire.</p></div><span class="price">$125.000</span></label>
-          <label class="opt"><input type="checkbox" value="250000" id="bk-fondo"><div><h3>Marca de fondo</h3><p>Presencia permanente en el fondo del set durante todo el programa.</p></div><span class="price">$250.000</span></label>
+          <label class="opt"><input type="checkbox" value="105000" id="bk-spot"><div><h3>Spot en tanda</h3><p>Anuncio de hasta 45 segundos en 2 cortes del programa.</p></div><span class="price">$105.000</span></label>
+          <label class="opt"><input type="checkbox" value="360000" id="bk-est"><div><h3>Estandarte en set</h3><p>Estandarte publicitario a la vista de cámara. Tamaño a definir.</p></div><span class="price">$360.000</span></label>
+          <label class="opt"><input type="checkbox" value="375000" id="bk-men"><div><h3>Menciones en vivo</h3><p>3 anuncios de producto de más de 30 segundos, leídos al aire.</p></div><span class="price">$375.000</span></label>
+          <label class="opt"><input type="checkbox" value="750000" id="bk-fondo"><div><h3>Marca de fondo</h3><p>Presencia permanente en el fondo del set durante todo el programa.</p></div><span class="price">$750.000</span></label>
         </div>
       </div>
       <aside class="total" aria-live="polite">
@@ -526,10 +526,10 @@ dialog.lb button{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));ri
       <h2 style="font-size:clamp(28px,3.6vw,44px)">Elegí cómo entra tu marca al ring</h2>
       <p class="soft" style="margin-top:12px">Cada plan suma activos al anterior. Valores mensuales en pesos argentinos, más IVA, con cupos limitados por categoría.</p>
       <div class="tiers" role="group" aria-label="Planes de sponsoreo">
-        <button class="tier" data-tier="1" aria-pressed="false"><h3>Logo en flyers</h3><span class="price">$100.000</span><small>por mes</small></button>
-        <button class="tier" data-tier="2" aria-pressed="false"><h3>Mención + flyers</h3><span class="price">$200.000</span><small>por mes</small></button>
-        <button class="tier" data-tier="3" aria-pressed="true"><h3>Banner protagonista</h3><span class="price">$400.000</span><small>por mes</small></button>
-        <button class="tier owner" data-tier="4" aria-pressed="false"><h3>Ring Owner</h3><span class="price">$1.000.000</span><small>un solo cupo</small></button>
+        <button class="tier" data-tier="1" aria-pressed="false"><h3>Logo en flyers</h3><span class="price">$300.000</span><small>por mes</small></button>
+        <button class="tier" data-tier="2" aria-pressed="false"><h3>Mención + flyers</h3><span class="price">$600.000</span><small>por mes</small></button>
+        <button class="tier" data-tier="3" aria-pressed="true"><h3>Banner protagonista</h3><span class="price">$1.200.000</span><small>por mes</small></button>
+        <button class="tier owner" data-tier="4" aria-pressed="false"><h3>Ring Owner</h3><span class="price">$3.000.000</span><small>un solo cupo</small></button>
       </div>
       <ul class="assets" id="ecAssets">
         <li data-min="1">Logo en los flyers oficiales<span class="st"></span></li>
@@ -684,10 +684,10 @@ dialog.lb button{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));ri
   function calc(){
     var on=boxes.filter(function(b){return b.checked}),sum=on.reduce(function(a,b){return a+ +b.value},0);
     var all=on.length===boxes.length,save=document.getElementById('bkSave');
-    document.getElementById('bkTotal').textContent=fmt(all?500000:sum);
+    document.getElementById('bkTotal').textContent=fmt(all?1500000:sum);
     document.getElementById('bkLabel').textContent=all?'Pack main sponsor':'Tu selección';
     document.getElementById('bkHint').textContent=on.length?(all?'Los cuatro formatos juntos, con prioridad de rubro.':on.length+(on.length===1?' formato elegido.':' formatos elegidos.')):'Sumá formatos para ver la inversión.';
-    save.hidden=!all;if(all)save.textContent='Ahorrás '+fmt(sum-500000)+' contra la compra por separado.';
+    save.hidden=!all;if(all)save.textContent='Ahorrás '+fmt(sum-1500000)+' contra la compra por separado.';
   }
   boxes.forEach(function(b){b.addEventListener('change',calc)});calc();
 
