@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fort Music Media Kit</title>
+<meta name="description" content="Media kit de Fort Music: Búnker Stream, Entre Cuerdas y estudios para marcas. Comercializa Avalon World Agency®.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;800&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Layout: brandbook de Avalon. Masthead fijo, un capítulo por módulo con su propio color (claro / noche violeta / ring naranja / violeta pleno). Lo memorable: el corte del edificio que se explora piso por piso. */
+:root{
+  --paper:#F7F5FB; --paper-2:#EDE6FB; --card:#FFFFFF;
+  --ink:#1E1B24; --gray:#3F3F3F; --muted:#5E5869;
+  --violet:#7D03FF; --violet-deep:#5A00BA; --violet-soft:#B78BFF;
+  --night:#15121C; --night-2:#221C2E; --night-line:#3A3150; --night-text:#CFC8DC;
+  --ring:#120E12; --ring-2:#221A1C; --ring-line:#4A3A3A; --ring-text:#E2D9D3;
+  --orange:#FF7A3D; --mint:#2EE6C5;
+  --display:'Unbounded', 'Arial Black', Arial, sans-serif;
+  --body:'Poppins', 'Segoe UI', Arial, sans-serif;
+  --wrap:1240px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(34px,5.2vw,64px);font-weight:700;letter-spacing:-.02em}
+h3{font-size:clamp(19px,1.8vw,23px);font-weight:700;line-height:1.25}
+p{margin:0}
+.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.55;max-width:60ch}
+.kicker{font-size:15px;font-weight:600;letter-spacing:.06em;color:var(--violet)}
+.num{font-family:var(--display);font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+
+/* masthead */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(247,245,251,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,27,36,.08)}
+.mast .wrap{display:flex;align-items:center;gap:24px;height:72px}
+.wordmark{font-family:var(--display);font-size:14px;line-height:1.1;font-weight:400;text-decoration:none;white-space:nowrap}
+.icons{display:flex;gap:7px;align-items:center}
+.icons img{height:22px;width:auto}
+.nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;font-size:14px;font-weight:500;padding:8px 12px;border-radius:999px}
+.nav a:hover{background:var(--paper-2)}
+.nav a[aria-current="true"]{background:var(--ink);color:var(--paper)}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.d-casa{background:var(--violet-soft)}.d-bunker{background:var(--night);box-shadow:inset 0 0 0 2px var(--violet-soft)}.d-ec{background:var(--orange)}.d-st{background:var(--violet)}
+@media (max-width:860px){.mast .icons{display:none}.mast .wrap{gap:12px}}
+@media (max-width:520px){.wordmark{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 70% at 100% 100%, #B98CFF 0%, #DCF7EF 45%, transparent 75%),var(--paper)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:56px;align-items:center;padding-block:64px 72px}
+.hero h1{font-size:clamp(64px,12vw,168px);font-weight:800;letter-spacing:-.045em;line-height:.92}
+.hero h1 span{color:var(--violet);display:block}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;color:var(--muted);margin-bottom:28px}
+.hero .lead{margin-top:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid var(--ink);transition:transform .15s ease, background .15s ease}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--violet);border-color:var(--violet);color:#fff}
+.btn.primary:hover{background:var(--violet-deep);border-color:var(--violet-deep)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.reel{position:relative;aspect-ratio:9/16;max-height:640px;width:100%;max-width:360px;justify-self:end;border-radius:28px;overflow:hidden;background:var(--night);box-shadow:0 30px 80px -30px rgba(90,0,186,.55)}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel figcaption{position:absolute;left:16px;right:16px;bottom:16px;color:#fff;font-size:13px;background:rgba(21,18,28,.55);backdrop-filter:blur(8px);padding:8px 12px;border-radius:12px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);margin-top:8px}
+.facts div{padding:22px 20px 26px 0}
+.facts .num{font-size:clamp(40px,5vw,64px);color:var(--violet)}
+.facts p{font-size:15px;color:var(--gray);margin-top:8px;max-width:22ch}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.reel{justify-self:start;max-width:300px}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* chapters */
+.chapter{padding-block:112px}
+.chap-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:end;margin-bottom:56px}
+.chap-no{font-family:var(--display);font-size:clamp(72px,11vw,150px);font-weight:800;line-height:.8;letter-spacing:-.04em}
+.chap-head .lead{margin-top:18px}
+@media (max-width:640px){.chap-head{grid-template-columns:1fr;gap:12px}.chapter{padding-block:80px}}
+
+/* casa */
+.casa .chap-no{color:var(--violet)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+@media (max-width:900px){.two{grid-template-columns:1fr;gap:40px}}
+.pillars{display:grid;gap:0}
+.pillars div{border-top:2px solid var(--ink);padding:20px 0}
+.pillars div:last-child{border-bottom:2px solid var(--ink)}
+.pillars p{color:var(--muted);margin-top:6px}
+
+/* building explorer */
+.explorer{margin-top:88px;display:grid;grid-template-columns:300px minmax(0,1fr);gap:40px;align-items:start}
+.explorer-intro{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
+.explorer-intro p{color:var(--muted);max-width:52ch}
+.building{display:flex;flex-direction:column;gap:6px;position:sticky;top:96px}
+.floor{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;border-radius:10px;font-family:var(--display);font-size:15px;font-weight:600;transition:transform .2s cubic-bezier(.2,.8,.2,1), background .2s ease, color .2s ease}
+.floor small{font-family:var(--body);font-size:13px;font-weight:500;opacity:.75}
+.floor[data-level="azotea"]{background:#EDE6FB;margin-inline:0 36px;border-radius:24px 24px 10px 10px}
+.floor[data-level="piso2"]{background:#E2D5FA}
+.floor[data-level="piso1"]{background:#CDB4FF}
+.floor[data-level="pb"]{background:#B78BFF}
+.ground{height:4px;background:var(--ink);border-radius:2px;margin:4px -8px}
+.floor[data-level="sub1"]{background:#3A3150;color:#F3F0FA}
+.floor[data-level="sub2"]{background:#221C2E;color:#F3F0FA}
+.floor:hover{transform:translateX(6px)}
+.floor[aria-pressed="true"]{background:var(--violet);color:#fff;transform:translateX(12px)}
+.floor:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.plan{background:var(--card);border-radius:24px;padding:28px;display:grid;gap:24px;box-shadow:0 1px 0 rgba(30,27,36,.06)}
+.plan-img{position:relative;aspect-ratio:16/9;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #E4DEEE}
+.plan-img img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:opacity .25s ease}
+.plan-img img.swap{opacity:0}
+.plan-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.plan-body h3{font-size:clamp(26px,3vw,36px)}
+.plan-body p{color:var(--gray);margin-top:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;align-content:start;padding:0;margin:0;list-style:none}
+.tags li{font-size:14px;padding:7px 12px;border-radius:999px;background:var(--paper-2);color:var(--ink)}
+@media (max-width:900px){.explorer{grid-template-columns:1fr}.building{position:static;flex-direction:column}.plan-body{grid-template-columns:1fr}.floor[data-level="azotea"]{margin-inline:0}}
+
+/* gallery */
+.gallery-head{margin-top:96px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:12px}
+.gallery-head p{color:var(--muted)}
+.mosaic{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:200px;gap:12px}
+.shot{all:unset;display:block;box-sizing:border-box;cursor:zoom-in;position:relative;border-radius:16px;overflow:hidden;background:var(--paper-2)}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.shot:hover img{transform:scale(1.04)}
+.shot span{position:absolute;left:10px;bottom:10px;right:10px;font-size:13px;color:#fff;background:rgba(21,18,28,.6);padding:5px 10px;border-radius:8px;width:fit-content;max-width:calc(100% - 20px)}
+.shot:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.w2{grid-column:span 2}.w3{grid-column:span 3}.w4{grid-column:span 4}.h2{grid-row:span 2}
+@media (max-width:760px){.mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px}.w2,.w3,.w4{grid-column:span 2}.w1m{grid-column:span 1}}
+
+/* bunker */
+.bunker{background:radial-gradient(ellipse 50% 40% at 100% 0%, #3A1873 0%, transparent 70%),var(--night);color:#F3F0FA}
+.bunker .chap-no{color:var(--violet-soft)}
+.bunker .kicker{color:var(--violet-soft)}
+.bunker .lead,.bunker .soft{color:var(--night-text)}
+.spec{display:grid}
+.spec div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;border-top:1px solid var(--night-line);padding:16px 0}
+.spec div:last-child{border-bottom:1px solid var(--night-line)}
+.spec dt{font-size:14px;color:#A9A2B8;margin:0}
+.spec dd{margin:0;font-weight:500}
+.tabs{display:inline-flex;gap:4px;padding:5px;border-radius:999px;background:var(--night-2);margin:72px 0 32px}
+.tab{all:unset;cursor:pointer;padding:10px 20px;border-radius:999px;font-weight:600;font-size:15px;color:var(--night-text)}
+.tab[aria-selected="true"]{background:var(--violet-soft);color:var(--night)}
+.tab:focus-visible{outline:3px solid var(--violet-soft);outline-offset:2px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats div{border-top:1px solid var(--night-line);padding:22px 24px 30px 0}
+.stats .num{font-size:clamp(36px,4.6vw,60px);color:var(--violet-soft)}
+.stats .num.w{color:#F3F0FA}
+.stats p{color:var(--night-text);margin-top:8px;max-width:28ch;font-size:15px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.yt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:56px}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:64px minmax(0,1fr) 64px;gap:14px;align-items:center;font-size:15px}
+.bar .track{height:30px;border-radius:0 8px 8px 0;background:transparent;position:relative}
+.bar .fill{height:100%;border-radius:0 8px 8px 0;background:var(--night-line);width:calc(var(--v) * 3.3%)}
+.bar.hi .fill{background:var(--violet-soft)}
+.bar b{font-variant-numeric:tabular-nums;text-align:right}
+.bar span{color:var(--night-text)}
+@media (max-width:760px){.yt{grid-template-columns:1fr}}
+.source{font-size:14px;color:#A9A2B8;margin-top:24px}
+.top{margin-top:72px}
+.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px;max-width:760px}
+.thumbs figure{margin:0}
+.thumbs img{width:100%;aspect-ratio:1/1.05;object-fit:cover;object-position:top;border-radius:12px}
+.thumbs figcaption{font-size:13px;color:var(--night-text);margin-top:8px}
+@media (max-width:560px){.thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* combo builders */
+.builder{margin-top:96px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:32px;align-items:start}
+.opts{display:grid;gap:10px;margin-top:28px}
+.opt{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:16px;align-items:center;padding:20px 22px;border-radius:16px;cursor:pointer;background:var(--night-2);border:2px solid transparent;transition:border-color .15s ease}
+.opt:has(input:checked){border-color:var(--violet-soft)}
+.opt:has(input:focus-visible){outline:3px solid var(--violet-soft);outline-offset:2px}
+.opt input{appearance:none;width:24px;height:24px;border-radius:7px;border:2px solid var(--night-text);margin:0;display:grid;place-content:center}
+.opt input:checked{background:var(--violet-soft);border-color:var(--violet-soft)}
+.opt input:checked::after{content:"";width:10px;height:6px;border:solid var(--night);border-width:0 0 3px 3px;transform:rotate(-45deg) translate(1px,-1px)}
+.opt h3{font-size:18px}
+.opt p{font-size:14px;color:var(--night-text);margin-top:4px}
+.opt .price{font-family:var(--display);font-weight:700;font-size:18px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.total{position:sticky;top:96px;background:var(--violet);color:#fff;border-radius:24px;padding:32px;display:grid;gap:14px}
+.total .num{font-size:clamp(40px,4vw,52px)}
+.total p{font-size:15px;color:#F1E8FF}
+.total .save{background:rgba(255,255,255,.16);padding:10px 14px;border-radius:12px;font-weight:500;color:#fff}
+@media (max-width:900px){.builder{grid-template-columns:1fr}.total{position:static}}
+
+/* entre cuerdas */
+.ec{background:var(--ring);color:#F7F2EE}
+.ec .chap-no{color:var(--orange)}
+.ec .kicker{color:var(--orange)}
+.ec .lead,.ec .soft{color:var(--ring-text)}
+.ec-hero{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:21/8;margin-bottom:72px}
+.ec-hero img{width:100%;height:100%;object-fit:cover}
+.ec-hero p{position:absolute;left:24px;bottom:22px;background:rgba(18,14,18,.7);padding:8px 14px;border-radius:10px;font-size:14px}
+@media (max-width:640px){.ec-hero{aspect-ratio:4/3}}
+blockquote{margin:36px 0 0;border-left:5px solid var(--orange);padding:4px 0 4px 24px}
+blockquote p{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.3}
+blockquote cite{display:block;font-style:normal;font-size:14px;color:#C9BFB8;margin-top:12px}
+.ec .stats div{border-color:var(--ring-line)}
+.ec .stats .num{color:var(--orange)}
+.ec .stats .num.w{color:#F7F2EE}
+.ec .stats p{color:var(--ring-text)}
+.ec .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:760px){.ec .stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ec .mosaic .shot{background:var(--ring-2)}
+.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.tier{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:18px;background:var(--ring-2);border:2px solid transparent;transition:border-color .15s ease, transform .15s ease}
+.tier:active{transform:scale(.98)}
+.tier .price{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.2vw,28px);color:var(--orange);font-variant-numeric:tabular-nums}
+.tier small{font-size:13px;color:#C9BFB8}
+.tier[aria-pressed="true"]{border-color:var(--orange)}
+.tier.owner{background:var(--orange);color:#1E1110}
+.tier.owner .price{color:#1E1110}.tier.owner small{color:#4A2A1C}
+.tier.owner[aria-pressed="true"]{border-color:#F7F2EE}
+.tier:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media (max-width:860px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.assets{margin-top:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--ring-line)}
+.assets li{list-style:none;display:flex;gap:12px;align-items:center;padding:16px 16px 16px 0;border-bottom:1px solid var(--ring-line);color:#7C6E6A;transition:color .2s ease}
+.assets li::before{content:"";width:22px;height:22px;flex:none;border-radius:50%;border:2px solid currentColor}
+.assets li.on{color:#F7F2EE}
+.assets li.on::before{background:var(--orange);border-color:var(--orange);box-shadow:inset 0 0 0 5px var(--ring)}
+.assets li .st{margin-left:auto;font-size:13px}
+@media (max-width:760px){.assets{grid-template-columns:1fr}}
+.assets-wrap{padding:0;margin:0}
+
+/* studios */
+.studios{background:radial-gradient(ellipse 50% 60% at 100% 100%, #2EE6C5 0%, transparent 60%),var(--violet);color:#fff}
+.studios .chap-no{color:#fff}
+.studios .lead,.studios .soft{color:#F1E8FF}
+.rec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr);gap:16px;align-items:stretch}
+.rec .shot{min-height:300px}
+.rec-text{background:rgba(21,18,28,.25);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
+@media (max-width:900px){.rec{grid-template-columns:1fr 1fr}.rec-text{grid-column:1/-1}}
+.spaces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:56px}
+.space{background:rgba(255,255,255,.1);border-radius:18px;padding:22px}
+.space p{font-size:15px;color:#F1E8FF;margin-top:8px}
+@media (max-width:900px){.spaces{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.spaces{grid-template-columns:1fr}}
+.note{margin-top:20px;font-size:15px;color:#F1E8FF}
+.ideas-head{margin-top:96px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:end}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{all:unset;cursor:pointer;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;background:rgba(255,255,255,.14)}
+.chip[aria-pressed="true"]{background:#fff;color:var(--violet)}
+.chip:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.ideas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}
+.idea{background:var(--paper);color:var(--ink);border-radius:20px;padding:28px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px}
+.idea img{width:40px;height:40px;object-fit:contain}
+.idea p{color:var(--muted);margin-top:8px;font-size:16px}
+.idea .gives{margin-top:14px;font-size:14px;color:var(--violet);font-weight:600}
+@media (max-width:760px){.ideas{grid-template-columns:1fr}}
+.modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.mode{border:2px solid rgba(255,255,255,.35);border-radius:20px;padding:26px}
+.mode.full{background:#fff;color:var(--ink);border-color:#fff}
+.mode.full p{color:var(--muted)}
+.mode p{margin-top:8px;font-size:15px;color:#F1E8FF}
+@media (max-width:760px){.modes{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:40px 0 0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid #fff;padding-top:14px;font-weight:500}
+.steps li::before{content:counter(s);display:block;font-family:var(--display);font-weight:800;font-size:28px;color:var(--mint);margin-bottom:6px}
+@media (max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+
+/* avalon */
+.avalon{padding-block:112px;background:radial-gradient(ellipse 50% 70% at 100% 100%, #FFB08A 0%, #CDB4FF 35%, transparent 70%),var(--paper)}
+.creds{display:grid}
+.creds div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:baseline;border-top:2px solid var(--ink);padding:16px 0}
+.creds div:last-child{border-bottom:2px solid var(--ink)}
+.creds .num{font-size:34px;color:var(--violet)}
+.creds p{color:var(--gray)}
+.contact{margin-top:88px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end}
+.thanks h2{font-size:clamp(48px,8vw,104px);color:var(--violet);font-weight:800}
+.tagline{font-family:var(--display);font-weight:300;font-size:clamp(22px,2.6vw,32px);line-height:1.3;margin-top:22px}
+.tagline b{font-weight:700}
+.tagline i{font-style:normal;color:var(--violet)}
+.iso{height:64px;width:auto;margin-bottom:28px}
+.card{background:var(--card);border-radius:24px;padding:32px;display:grid;gap:20px}
+.card dt{font-size:14px;font-weight:600;color:var(--violet)}
+.card dd{margin:4px 0 0;font-size:18px;user-select:all}
+.card dl{margin:0;display:grid;gap:18px}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+footer{background:var(--ink);color:#C9C3D6;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(94vw,1400px);max-height:92vh}
+dialog.lb::backdrop{background:rgba(12,10,16,.9)}
+dialog.lb img{max-height:84vh;width:auto;border-radius:12px;margin:0 auto}
+dialog.lb p{color:#fff;text-align:center;margin-top:12px;font-size:15px}
+dialog.lb button{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));background:#fff;color:var(--ink);border:0;border-radius:999px;padding:10px 18px;font-weight:600;cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <a class="wordmark" href="#inicio">Avalon World<br>Agency®</a>
+    <div class="icons" aria-hidden="true">
+      <img src="assets/brand/dots.png" alt=""><img src="assets/brand/bolt.png" alt=""><img src="assets/brand/ribbon.png" alt=""><img src="assets/brand/arrow.png" alt=""><img src="assets/brand/circle.png" alt="">
+    </div>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#casa"><i class="dot d-casa"></i>La casa</a>
+      <a href="#bunker"><i class="dot d-bunker"></i>Búnker Stream</a>
+      <a href="#entre-cuerdas"><i class="dot d-ec"></i>Entre Cuerdas</a>
+      <a href="#studios"><i class="dot d-st"></i>Studios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="meta"><span>Media kit 2026</span><span>Av. Hipólito Yrigoyen 3742, CABA</span></div>
+      <h1>Fort <span>Music</span></h1>
+      <p class="lead">Dos programas al aire, un edificio de producción en Almagro y un equipo dispuesto a hacer con tu marca lo que haga falta: sponsorear, alquilar un set o producir tu propio contenido.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#bunker">Ver programas y planes</a>
+        <a class="btn ghost" href="#studios">Alquilar estudios</a>
+      </div>
+    </div>
+    <figure class="reel" style="margin:0">
+      <video src="assets/video/set.mp4" poster="assets/img/set-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Recorrido por uno de los sets de Fort Music"></video>
+      <figcaption>Recorrido por uno de los sets</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="facts">
+      <div><p class="num">6</p><p>niveles, de los subsuelos a la azotea</p></div>
+      <div><p class="num">4</p><p>sets de TV y streaming, uno de croma</p></div>
+      <div><p class="num">2</p><p>salas de control en el estudio de grabación</p></div>
+      <div><p class="num">100</p><p>personas de público por evento</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 LA CASA -->
+<section class="chapter casa" id="casa">
+  <div class="wrap">
+    <div class="chap-head">
+      <span class="chap-no" aria-hidden="true">01</span>
+      <div><p class="kicker">La casa</p><h2>Una casa de producción en Almagro</h2></div>
+    </div>
+    <div class="two">
+      <div style="display:grid;gap:18px">
+        <p class="lead">Fort Music es la productora audiovisual y musical que dirige Thomas Fort. Funciona en un edificio de seis niveles con estudios de televisión y streaming, estudio de grabación, set de fotografía, escuela de DJ, camarines y vestuarios.</p>
+        <p class="lead" style="color:var(--muted)">Desde ahí se producen y transmiten Búnker Stream y Entre Cuerdas, con público en vivo en cada emisión.</p>
+      </div>
+      <div class="pillars">
+        <div><h3>Producir</h3><p>Sets, croma, grabación de audio y postproducción bajo un mismo techo.</p></div>
+        <div><h3>Transmitir</h3><p>Salas de control de video y audio para salir en vivo por YouTube, Kick e Instagram.</p></div>
+        <div><h3>Reunir</h3><p>Gradas, lobby y bar para recibir hasta 100 personas por evento.</p></div>
+      </div>
+    </div>
+
+    <div class="explorer" id="edificio">
+      <div class="explorer-intro">
+        <h2 style="font-size:clamp(28px,3.6vw,44px)">Recorré el edificio</h2>
+        <p>Elegí un nivel para ver su plano y qué hay adentro.</p>
+      </div>
+      <div class="building" role="group" aria-label="Niveles del edificio">
+        <button class="floor" data-level="azotea" aria-pressed="false">Azotea<small>Exterior</small></button>
+        <button class="floor" data-level="piso2" aria-pressed="false">2° piso<small>Camarines</small></button>
+        <button class="floor" data-level="piso1" aria-pressed="false">1° piso<small>Estudio 1 y croma</small></button>
+        <button class="floor" data-level="pb" aria-pressed="true">Planta baja<small>Estudios 3 y 4</small></button>
+        <div class="ground" aria-hidden="true"></div>
+        <button class="floor" data-level="sub1" aria-pressed="false">1° subsuelo<small>Planta libre</small></button>
+        <button class="floor" data-level="sub2" aria-pressed="false">2° subsuelo<small>Planta libre</small></button>
+      </div>
+      <div class="plan" aria-live="polite">
+        <div class="plan-img"><img id="planImg" src="assets/plans/pb.jpg" alt="Plano de planta baja de Fort Music"></div>
+        <div class="plan-body">
+          <div><h3 id="planName">Planta baja</h3><p id="planText"></p></div>
+          <ul class="tags" id="planTags"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-head">
+      <h2 style="font-size:clamp(28px,3.6vw,44px)">Adentro de Fort Music</h2>
+      <p>Tocá una foto para verla grande.</p>
+    </div>
+    <div class="mosaic">
+      <button class="shot w3 h2" data-full="assets/img/control.jpg" data-cap="Sala de control del estudio de grabación"><img src="assets/img/control.jpg" alt="Consola de mezcla y monitores en la sala de control"><span>Sala de control</span></button>
+      <button class="shot w3 h2" data-full="assets/img/sala.jpg" data-cap="Sala de grabación con tratamiento acústico"><img src="assets/img/sala.jpg" alt="Sala de grabación con paneles acústicos de madera y luz roja"><span>Sala de grabación</span></button>
+      <button class="shot w2 h2 w1m" data-full="assets/img/estudio-5.jpg" data-cap="Estudio con piso de madera y parrilla de luces"><img src="assets/img/estudio-5.jpg" alt="Estudio amplio con piso de madera y luces"><span>Estudio con parrilla de luces</span></button>
+      <button class="shot w2 h2 w1m" data-full="assets/img/set-3.jpg" data-cap="Set con alfombra roja y escenario circular"><img src="assets/img/set-3.jpg" alt="Set con alfombra roja, escenario circular y luces"><span>Set con escenario</span></button>
+      <button class="shot w2 h2" data-full="assets/img/estudio-12.jpg" data-cap="Cabina de control con vista al estudio"><img src="assets/img/estudio-12.jpg" alt="Cabina con ventana hacia el estudio"><span>Cabina con vista al set</span></button>
+      <button class="shot w2 w1m" data-full="assets/img/estudio-2.jpg" data-cap="Estudio vacío listo para escenografía"><img src="assets/img/estudio-2.jpg" alt="Estudio vacío con piso de madera"><span>Planta libre de set</span></button>
+      <button class="shot w2 w1m" data-full="assets/img/set-7.jpg" data-cap="Escenario y parrilla de iluminación"><img src="assets/img/set-7.jpg" alt="Escenario con parrilla de iluminación"><span>Parrilla de iluminación</span></button>
+      <button class="shot w2" data-full="assets/img/estudio-9.jpg" data-cap="Estudio y cabina"><img src="assets/img/estudio-9.jpg" alt="Estudio con paredes revestidas y cabina"><span>Estudio y cabina</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 02 BÚNKER -->
+<section class="chapter bunker" id="bunker">
+  <div class="wrap">
+    <div class="chap-head">
+      <span class="chap-no" aria-hidden="true">02</span>
+      <div><p class="kicker">Búnker Stream</p><h2>Sin Perdón a Nadie, en vivo desde el Búnker</h2></div>
+    </div>
+    <div class="two">
+      <div style="display:grid;gap:18px">
+        <p class="lead">Ciclo de actualidad que combina información, análisis y entrevistas a dirigentes, influencers y referentes de la agenda nacional, con participación del público presente en el estudio.</p>
+        <p class="lead">Cada emisión sale en vivo por YouTube y se recorta en clips para Instagram durante la semana.</p>
+      </div>
+      <dl class="spec">
+        <div><dt>Cuándo</dt><dd>Viernes, 19 h</dd></div>
+        <div><dt>Conducción</dt><dd>Iván Velázquez, Gastón Alberdi y Pedro Vissio</dd></div>
+        <div><dt>Análisis</dt><dd>Emiliano Ayerdi</dd></div>
+        <div><dt>Entrevistas</dt><dd>Marcelo “Chelito” Vecino</dd></div>
+        <div><dt>En sala</dt><dd>Hasta 100 personas por emisión</dd></div>
+      </dl>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Métricas por plataforma">
+      <button class="tab" role="tab" id="t-ig" aria-controls="p-ig" aria-selected="true">Instagram</button>
+      <button class="tab" role="tab" id="t-yt" aria-controls="p-yt" aria-selected="false" tabindex="-1">YouTube</button>
+    </div>
+    <div id="p-ig" role="tabpanel" aria-labelledby="t-ig">
+      <div class="stats">
+        <div><p class="num">425.586</p><p>reproducciones en 30 días</p></div>
+        <div><p class="num">111.728</p><p>cuentas alcanzadas</p></div>
+        <div><p class="num">22.476</p><p>interacciones</p></div>
+        <div><p class="num w">92%</p><p>de las vistas semanales llega a gente que todavía no sigue la cuenta</p></div>
+        <div><p class="num w">+206%</p><p>de visualizaciones contra la semana anterior, 258 mil en siete días</p></div>
+        <div><p class="num w">+1.203</p><p>seguidores nuevos en el mes</p></div>
+      </div>
+      <p class="source">Fuente: Instagram, últimos 30 días al 17/10/2026.</p>
+    </div>
+    <div id="p-yt" role="tabpanel" aria-labelledby="t-yt" hidden>
+      <div class="yt">
+        <div>
+          <h3 style="margin-bottom:20px">Vistas por edad</h3>
+          <div class="bars">
+            <div class="bar"><span>18–24</span><div class="track"><div class="fill" style="--v:7.8"></div></div><b>7,8%</b></div>
+            <div class="bar hi"><span>25–34</span><div class="track"><div class="fill" style="--v:28.9"></div></div><b>28,9%</b></div>
+            <div class="bar hi"><span>35–44</span><div class="track"><div class="fill" style="--v:24.6"></div></div><b>24,6%</b></div>
+            <div class="bar hi"><span>45–54</span><div class="track"><div class="fill" style="--v:18.9"></div></div><b>18,9%</b></div>
+            <div class="bar"><span>55–64</span><div class="track"><div class="fill" style="--v:11.7"></div></div><b>11,7%</b></div>
+            <div class="bar"><span>65 +</span><div class="track"><div class="fill" style="--v:8.1"></div></div><b>8,1%</b></div>
+          </div>
+          <p class="soft" style="margin-top:18px">El 72% de la audiencia tiene entre 25 y 54 años.</p>
+        </div>
+        <div class="stats" style="grid-template-columns:1fr 1fr">
+          <div><p class="num">87,7%</p><p>hombres</p></div>
+          <div><p class="num">70,3%</p><p>desde Argentina</p></div>
+          <div><p class="num">80,8%</p><p>de las vistas son en vivo</p></div>
+          <div><p class="num">19,6%</p><p>del tiempo se mira en un televisor</p></div>
+        </div>
+      </div>
+      <p class="source">Fuente: YouTube Studio, 20/9 al 17/10/2026. 10.986 vistas, 1,7 mil horas de reproducción y +450 suscriptores.</p>
+    </div>
+
+    <div class="top">
+      <h3>Lo más visto en Instagram</h3>
+      <div class="thumbs">
+        <figure><img src="assets/img/span-0.jpg" alt="Placa del programa con el invitado Ian Martín"><figcaption>Entrevista a Ian Martín, 118 mil vistas</figcaption></figure>
+        <figure><img src="assets/img/span-1.jpg" alt="Placa de lanzamiento de SPAN por Búnker"><figcaption>Lanzamiento de SPAN, 114 mil vistas</figcaption></figure>
+        <figure><img src="assets/img/span-2.jpg" alt="Placa de un invitado del programa"><figcaption>Invitado especial, 60 mil vistas</figcaption></figure>
+        <figure><img src="assets/img/span-3.jpg" alt="Placa de un invitado del programa"><figcaption>Entre lo más visto de la semana</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="builder" id="bunker-planes">
+      <div>
+        <h2 style="font-size:clamp(28px,3.6vw,44px)">Armá tu presencia en Búnker</h2>
+        <p class="soft" style="margin-top:12px">Elegí los formatos que te interesan. Con los cuatro juntos accedés al pack de main sponsor.</p>
+        <div class="opts" id="bkOpts">
+          <label class="opt"><input type="checkbox" value="35000" id="bk-spot"><div><h3>Spot en tanda</h3><p>Anuncio de hasta 45 segundos en 2 cortes del programa.</p></div><span class="price">$35.000</span></label>
+          <label class="opt"><input type="checkbox" value="120000" id="bk-est"><div><h3>Estandarte en set</h3><p>Estandarte publicitario a la vista de cámara. Tamaño a definir.</p></div><span class="price">$120.000</span></label>
+          <label class="opt"><input type="checkbox" value="125000" id="bk-men"><div><h3>Menciones en vivo</h3><p>3 anuncios de producto de más de 30 segundos, leídos al aire.</p></div><span class="price">$125.000</span></label>
+          <label class="opt"><input type="checkbox" value="250000" id="bk-fondo"><div><h3>Marca de fondo</h3><p>Presencia permanente en el fondo del set durante todo el programa.</p></div><span class="price">$250.000</span></label>
+        </div>
+      </div>
+      <aside class="total" aria-live="polite">
+        <p id="bkLabel">Tu selección</p>
+        <p class="num" id="bkTotal">$0</p>
+        <p id="bkHint">Sumá formatos para ver la inversión.</p>
+        <p class="save" id="bkSave" hidden></p>
+        <p style="font-size:13px">Valores en pesos argentinos, más IVA.</p>
+        <a class="btn" style="background:#fff;color:var(--violet);border-color:#fff;justify-content:center" href="#contacto">Pedir propuesta</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 03 ENTRE CUERDAS -->
+<section class="chapter ec" id="entre-cuerdas">
+  <div class="wrap">
+    <div class="chap-head">
+      <span class="chap-no" aria-hidden="true">03</span>
+      <div><p class="kicker">Entre Cuerdas</p><h2>Boxeo amateur con puesta de show</h2></div>
+    </div>
+    <figure class="ec-hero" style="margin-bottom:72px"><img src="assets/img/ring.jpg" alt="Final de una pelea en el ring de Entre Cuerdas, el árbitro levanta la mano del ganador"><p>Una noche de Entre Cuerdas en Fort Music</p></figure>
+    <div class="two">
+      <div>
+        <p class="lead">Entre Cuerdas combina peleas amateur avaladas por la World Pugilism Commission con humor, entrevistas, sketches y una realización cinematográfica pensada para streaming y redes. Los peleadores llegan de gimnasios de barrio, y cada evento cuenta su historia antes de subir al ring.</p>
+        <blockquote><p>“Somos amateurismo con espíritu profesional.”</p><cite>Thomas Fort, creador de Entre Cuerdas, en PrimiciasYa</cite></blockquote>
+      </div>
+      <button class="shot" style="aspect-ratio:4/3" data-full="assets/img/hosts.jpg" data-cap="Los conductores abren la velada frente al ring"><img src="assets/img/hosts.jpg" alt="Los conductores de Entre Cuerdas frente al ring"><span>Apertura de la velada</span></button>
+    </div>
+
+    <div class="stats" style="margin-top:88px">
+      <div><p class="num">206,9 mil</p><p>visualizaciones en Instagram en 30 días</p></div>
+      <div><p class="num">500</p><p>espectadores promedio en el primer streaming por Kick</p></div>
+      <div><p class="num w">100</p><p>personas en sala, capacidad completa desde el primer evento</p></div>
+      <div><p class="num w">16–35</p><p>años, fanáticos del boxeo, el streaming y el entretenimiento digital</p></div>
+    </div>
+    <p class="source" style="color:#C9BFB8">Fuente: propuesta de sponsors de Entre Cuerdas, temporada 2025. Eventos cada quince días.</p>
+
+    <div class="mosaic" style="margin-top:72px">
+      <button class="shot w4 h2" data-full="assets/img/fight.jpg" data-cap="Pelea en el ring"><img src="assets/img/fight.jpg" alt="Dos boxeadoras intercambian golpes"><span>En el ring</span></button>
+      <button class="shot w2 h2" data-full="assets/img/flyer.jpg" data-cap="Flyer oficial con logos de sponsors"><img src="assets/img/flyer.jpg" alt="Flyer oficial de una velada con logos de sponsors"><span>Flyer oficial</span></button>
+      <button class="shot w2 h2" data-full="assets/img/banners.jpg" data-cap="Banners de sponsors junto al ring"><img src="assets/img/banners.jpg" alt="Banners de sponsors junto al ring"><span>Banners frente a cámara</span></button>
+      <button class="shot w4 h2" data-full="assets/img/closing.jpg" data-cap="Conducción durante el evento"><img src="assets/img/closing.jpg" alt="Conductor de Entre Cuerdas en el evento"><span>Conducción en vivo</span></button>
+    </div>
+
+    <div style="margin-top:96px">
+      <h2 style="font-size:clamp(28px,3.6vw,44px)">Elegí cómo entra tu marca al ring</h2>
+      <p class="soft" style="margin-top:12px">Cada plan suma activos al anterior. Valores mensuales en pesos argentinos, más IVA, con cupos limitados por categoría.</p>
+      <div class="tiers" role="group" aria-label="Planes de sponsoreo">
+        <button class="tier" data-tier="1" aria-pressed="false"><h3>Logo en flyers</h3><span class="price">$100.000</span><small>por mes</small></button>
+        <button class="tier" data-tier="2" aria-pressed="false"><h3>Mención + flyers</h3><span class="price">$200.000</span><small>por mes</small></button>
+        <button class="tier" data-tier="3" aria-pressed="true"><h3>Banner protagonista</h3><span class="price">$400.000</span><small>por mes</small></button>
+        <button class="tier owner" data-tier="4" aria-pressed="false"><h3>Ring Owner</h3><span class="price">$1.000.000</span><small>un solo cupo</small></button>
+      </div>
+      <ul class="assets" id="ecAssets">
+        <li data-min="1">Logo en los flyers oficiales<span class="st"></span></li>
+        <li data-min="2">Mención de los conductores<span class="st"></span></li>
+        <li data-min="3">Banner enfocado por cámara<span class="st"></span></li>
+        <li data-min="3">Historias en Instagram<span class="st"></span></li>
+        <li data-min="4">Sogas del ring con tu marca<span class="st"></span></li>
+        <li data-min="4">Esquina exclusiva del sponsor<span class="st"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 04 STUDIOS -->
+<section class="chapter studios" id="studios">
+  <div class="wrap">
+    <div class="chap-head">
+      <span class="chap-no" aria-hidden="true">04</span>
+      <div><p class="kicker" style="color:var(--mint)">Fort Music Studios</p><h2>Studios para marcas</h2><p class="lead">Alquilá el edificio o dejá que produzcamos por vos tu podcast, tu canal de streaming, tu jingle o tu próximo spot.</p></div>
+    </div>
+
+    <div class="rec">
+      <button class="shot" data-full="assets/img/control.jpg" data-cap="Sala de control"><img src="assets/img/control.jpg" alt="Sala de control con consola de mezcla"><span>Sala de control</span></button>
+      <button class="shot" data-full="assets/img/sala.jpg" data-cap="Sala de grabación"><img src="assets/img/sala.jpg" alt="Sala de grabación"><span>Sala de grabación</span></button>
+      <div class="rec-text">
+        <h3>Un estudio de grabación de verdad</h3>
+        <p class="soft">Dos salas de control, sala de grabación tratada y sound lock. Sirve para jingles, locuciones, podcasts y música, con músicos y técnicos de la casa.</p>
+      </div>
+    </div>
+
+    <div class="spaces">
+      <div class="space"><h3>Estudio 4</h3><p>Set principal con gradas. Programas en vivo, lanzamientos y shows con público.</p></div>
+      <div class="space"><h3>Estudio 1</h3><p>Set de TV y streaming con salas de control de video y audio.</p></div>
+      <div class="space"><h3>Set de croma</h3><p>Spots, tutoriales y piezas con fondos virtuales.</p></div>
+      <div class="space"><h3>Estudio 3</h3><p>Set amplio para escenografías propias y rodajes.</p></div>
+      <div class="space"><h3>Estudio de grabación</h3><p>Jingles, locuciones, podcasts y música.</p></div>
+      <div class="space"><h3>Set de fotografía</h3><p>Catálogos, campañas, retratos y packshots.</p></div>
+      <div class="space"><h3>Azotea</h3><p>Locación exterior para sesiones, rodajes y eventos.</p></div>
+      <div class="space"><h3>Camarines</h3><p>Seis camarines, maquillaje y vestuarios en cada alquiler.</p></div>
+    </div>
+    <p class="note">Alquiler por media jornada o jornada completa, con técnico de sala. Producción, equipamiento extra y catering se cotizan aparte.</p>
+
+    <div class="ideas-head">
+      <h2 style="font-size:clamp(28px,3.6vw,44px)">Ideas para producir con tu marca</h2>
+      <div class="chips" role="group" aria-label="Filtrar ideas">
+        <button class="chip" data-f="all" aria-pressed="true">Todas</button>
+        <button class="chip" data-f="contenido" aria-pressed="false">Contenido propio</button>
+        <button class="chip" data-f="experiencia" aria-pressed="false">Experiencias</button>
+      </div>
+    </div>
+    <div class="ideas" id="ideas">
+      <article class="idea" data-k="contenido"><img src="assets/brand/dots.png" alt=""><div><h3>Tu marca, al aire</h3><p>Diseñamos y producimos el programa de streaming de tu marca, con formato, conducción, set, técnica y clips para redes.</p><p class="gives">Temporadas de 8 emisiones en vivo</p></div></article>
+      <article class="idea" data-k="contenido"><img src="assets/brand/bolt.png" alt=""><div><h3>Podcast llave en mano</h3><p>Grabamos tu podcast en el estudio de grabación, con edición, versión en video y publicación en Spotify y YouTube.</p><p class="gives">Audio, video y cortes verticales</p></div></article>
+      <article class="idea" data-k="contenido"><img src="assets/brand/ribbon.png" alt=""><div><h3>Jingle y sonido de marca</h3><p>Componemos y grabamos tu jingle, tu audio logo y las cortinas para radio, stream y redes, con músicos y locutores en sala.</p><p class="gives">Jingle, audio logo y cortinas</p></div></article>
+      <article class="idea" data-k="contenido"><img src="assets/brand/arrow.png" alt=""><div><h3>Spot day</h3><p>Una jornada de rodaje en croma o en set, con camarines y maquillaje. Sale el spot principal y sus versiones verticales.</p><p class="gives">Spot y versiones para redes</p></div></article>
+      <article class="idea" data-k="experiencia"><img src="assets/brand/circle.png" alt=""><div><h3>Creators day</h3><p>Invitamos a 8 creadores de tu rubro a producir en simultáneo en tres sets. En una jornada tu marca sale con decenas de piezas originales.</p><p class="gives">Una jornada, tres sets</p></div></article>
+      <article class="idea" data-k="experiencia"><img src="assets/brand/ribbon.png" alt=""><div><h3>Fight Night privada</h3><p>Una velada de Entre Cuerdas exclusiva para tu equipo o tus clientes, con ring, conductores y transmisión opcional.</p><p class="gives">Evento cerrado en el ring</p></div></article>
+      <article class="idea" data-k="experiencia"><img src="assets/brand/bolt.png" alt=""><div><h3>Lanzamiento en vivo</h3><p>Presentación de producto con público en las gradas del Estudio 4, transmitida por streaming y recortada en clips el mismo día.</p><p class="gives">Público, streaming y clips</p></div></article>
+      <article class="idea" data-k="experiencia"><img src="assets/brand/dots.png" alt=""><div><h3>Masterclass de DJ</h3><p>La escuela de DJ abre una clase con tu marca para tu comunidad, con una sesión final grabada en el estudio.</p><p class="gives">Clase abierta y sesión grabada</p></div></article>
+    </div>
+
+    <h2 style="font-size:clamp(28px,3.6vw,44px);margin-top:96px">Tres formas de contratar</h2>
+    <div class="modes">
+      <div class="mode"><h3>Alquiler del set</h3><p>La marca o su productora trae su equipo. Fort Music aporta el espacio, camarines y técnico de sala.</p></div>
+      <div class="mode"><h3>Producción en casa</h3><p>Sumamos cámaras, sonido, iluminación, dirección y edición del equipo de Fort Music.</p></div>
+      <div class="mode full"><h3>Llave en mano</h3><p>Avalon pone la idea, produce en Fort Music, distribuye el contenido y lo amplifica con pauta.</p></div>
+    </div>
+    <ol class="steps">
+      <li>Brief de la marca</li>
+      <li>Propuesta creativa y presupuesto</li>
+      <li>Producción en Fort Music</li>
+      <li>Distribución y pauta</li>
+      <li>Reporte de resultados</li>
+    </ol>
+  </div>
+</section>
+
+<!-- AVALON -->
+<section class="avalon" id="contacto">
+  <div class="wrap">
+    <div class="two">
+      <div style="display:grid;gap:18px">
+        <p class="kicker">Quién te acompaña</p>
+        <h2>Un solo equipo, del sponsoreo a la pauta</h2>
+        <p class="lead">Avalon World Agency® es el socio comercial de Fort Music. Coordinamos el sponsoreo, la producción en el edificio, la distribución del contenido y su amplificación en medios, con un único interlocutor para la marca.</p>
+      </div>
+      <div class="creds">
+        <div><p class="num">+30</p><p>personas entre estrategia, diseño, contenido, medios y tecnología</p></div>
+        <div><p class="num">5</p><p>oficinas: Buenos Aires, San Pablo, Barcelona, Dubái y Miami</p></div>
+        <div><p class="num">4</p><p>alianzas oficiales: Meta, Google, TikTok y Pinterest</p></div>
+        <div><p class="num">0%</p><p>de percepción a cuenta de Ganancias: con nuestra línea de crédito, la pauta no se paga con tarjeta</p></div>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="thanks">
+        <img class="iso" src="assets/brand/logo-alt-black.png" alt="Isotipo de Avalon World Agency®">
+        <h2>Hablemos</h2>
+        <p class="tagline">No hay nada más fuerte<br>que una <b>idea</b><i>.</i></p>
+      </div>
+      <div class="card">
+        <dl>
+          <div><dt>Web</dt><dd><a href="https://www.avalonworldagency.com" target="_blank" rel="noopener">avalonworldagency.com</a><br>avalon3.com</dd></div>
+          <div><dt>Email</dt><dd>info@avalon3.com</dd></div>
+          <div><dt>Teléfonos</dt><dd>+54 9 11 7021-2823<br>+54 9 11 6954-3008</dd></div>
+          <div><dt>Redes</dt><dd>@avalonworldagency · avaloncreativestudio</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Fort Music, Av. Hipólito Yrigoyen 3742, CABA</span><span>Comercializa Avalon World Agency®</span></div></footer>
+
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <button type="button" id="lbClose">Cerrar</button>
+  <img id="lbImg" src="" alt="">
+  <p id="lbCap"></p>
+</dialog>
+
+<script>
+(function(){
+  // Edificio
+  var F={
+    azotea:{n:'Azotea',t:'Terraza abierta con pérgola. Locación exterior para rodajes, sesiones y eventos.',s:['Terraza','Pérgola','Sala de máquinas']},
+    piso2:{n:'2° piso',t:'El piso de servicios para elencos y equipos de producción.',s:['Vestuarios','2 camarines','Maquillaje','Oficinas de producción','Sala de reuniones','Depósito de iluminación','Planta libre']},
+    piso1:{n:'1° piso',t:'Estudio 1, el set de croma y las salas de control desde donde se sale en vivo.',s:['Estudio 1','Set de croma','Control de video','Control de audio','3 camarines con vestidor','Lobby con bar','Estudio de animación','Salas de reuniones']},
+    pb:{n:'Planta baja',t:'Los dos estudios grandes, uno con gradas para público, y el estudio de grabación musical.',s:['Estudio 3','Estudio 4 con gradas','Estudio de grabación','Control A','Control B','Lobby','Cocina','Recepción','Cocheras']},
+    sub1:{n:'1° subsuelo',t:'Planta libre con columnas, apta para un set de gran formato o guardado de escenografía.',s:['Planta libre','Escenografía','Depósito']},
+    sub2:{n:'2° subsuelo',t:'Planta libre para depósito o ampliación.',s:['Planta libre','Depósito']}
+  };
+  var img=document.getElementById('planImg'),nm=document.getElementById('planName'),tx=document.getElementById('planText'),tg=document.getElementById('planTags');
+  var floors=[].slice.call(document.querySelectorAll('.floor'));
+  function show(k){
+    var d=F[k];floors.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.level===k?'true':'false')});
+    img.classList.add('swap');
+    setTimeout(function(){img.src='assets/plans/'+k+'.jpg';img.alt='Plano de '+d.n.toLowerCase()+' de Fort Music';img.classList.remove('swap')},120);
+    nm.textContent=d.n;tx.textContent=d.t;tg.innerHTML='';
+    d.s.forEach(function(s){var li=document.createElement('li');li.textContent=s;tg.appendChild(li)});
+  }
+  floors.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.level)})});
+  nm.textContent=F.pb.n;tx.textContent=F.pb.t;F.pb.s.forEach(function(s){var li=document.createElement('li');li.textContent=s;tg.appendChild(li)});
+
+  // Tabs
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});t.focus()}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(t)});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();sel(tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length])}})});
+
+  // Búnker combo
+  var fmt=function(n){return '$'+n.toLocaleString('es-AR')};
+  var boxes=[].slice.call(document.querySelectorAll('#bkOpts input'));
+  function calc(){
+    var on=boxes.filter(function(b){return b.checked}),sum=on.reduce(function(a,b){return a+ +b.value},0);
+    var all=on.length===boxes.length,save=document.getElementById('bkSave');
+    document.getElementById('bkTotal').textContent=fmt(all?500000:sum);
+    document.getElementById('bkLabel').textContent=all?'Pack main sponsor':'Tu selección';
+    document.getElementById('bkHint').textContent=on.length?(all?'Los cuatro formatos juntos, con prioridad de rubro.':on.length+(on.length===1?' formato elegido.':' formatos elegidos.')):'Sumá formatos para ver la inversión.';
+    save.hidden=!all;if(all)save.textContent='Ahorrás '+fmt(sum-500000)+' contra la compra por separado.';
+  }
+  boxes.forEach(function(b){b.addEventListener('change',calc)});calc();
+
+  // Entre Cuerdas tiers
+  var tiers=[].slice.call(document.querySelectorAll('.tier')),items=[].slice.call(document.querySelectorAll('#ecAssets li'));
+  function tier(n){tiers.forEach(function(t){t.setAttribute('aria-pressed',t.dataset.tier==n)});items.forEach(function(li){var on=+li.dataset.min<=n;li.classList.toggle('on',on);li.querySelector('.st').textContent=on?'Incluido':'No incluido'})}
+  tiers.forEach(function(t){t.addEventListener('click',function(){tier(+t.dataset.tier)})});tier(3);
+
+  // Ideas filter
+  var chips=[].slice.call(document.querySelectorAll('.chip')),ideas=[].slice.call(document.querySelectorAll('.idea'));
+  chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});ideas.forEach(function(i){i.hidden=!(c.dataset.f==='all'||i.dataset.k===c.dataset.f)})})});
+
+  // Lightbox
+  var lb=document.getElementById('lb'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCap');
+  document.querySelectorAll('.shot').forEach(function(s){s.addEventListener('click',function(){li.src=s.dataset.full;li.alt=s.querySelector('img').alt;lc.textContent=s.dataset.cap||'';if(lb.showModal)lb.showModal()})});
+  document.getElementById('lbClose').addEventListener('click',function(){lb.close()});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+
+  // Nav activa
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id?'true':'false')})}})},{rootMargin:'-45% 0px -50% 0px'});
+    ['casa','bunker','entre-cuerdas','studios','contacto'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+  // Video: respeta movimiento reducido
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
+})();
+</script>
+</body>
+</html>
